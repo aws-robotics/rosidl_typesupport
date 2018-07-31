@@ -114,7 +114,7 @@ extern "C"
 {
 #endif
 
-ROSIDL_TYPESUPPORT_C_EXPORT_@(spec.base_type.pkg_name)
+ROSIDL_TYPESUPPORT_C_EXPORT_@(pkg_upper)
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_c, @(spec.base_type.pkg_name), @(subfolder), @(spec.base_type.type))() {
 @[if len(type_supports) != 1]@

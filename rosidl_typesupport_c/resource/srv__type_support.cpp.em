@@ -107,7 +107,7 @@ extern "C"
 {
 #endif
 
-ROSIDL_TYPESUPPORT_C_EXPORT_@(spec.pkg_name)
+ROSIDL_TYPESUPPORT_C_EXPORT_@(pkg_upper)
 const rosidl_service_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, @(spec.pkg_name), @(spec.srv_name))() {
 @[if len(type_supports) != 1]@

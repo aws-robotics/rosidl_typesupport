@@ -63,7 +63,13 @@ def generate_c(generator_arguments_file, type_supports):
                     args['output_dir'], subfolder, generated_filename %
                     convert_camel_case_to_lower_case_underscore(spec.base_type.type))
 
-                data = {'spec': spec, 'subfolder': subfolder, 'type_supports': type_supports}
+                data = {
+                    'spec': spec,
+                    'subfolder': subfolder,
+                    'type_supports': type_supports,
+                    'pkg_upper': spec.base_type.pkg_name.upper(),
+
+                }
                 data.update(functions)
                 expand_template(
                     template_file, data, generated_file,
@@ -77,7 +83,11 @@ def generate_c(generator_arguments_file, type_supports):
                     args['output_dir'], subfolder, generated_filename %
                     convert_camel_case_to_lower_case_underscore(spec.srv_name))
 
-                data = {'spec': spec, 'type_supports': type_supports}
+                data = {
+                    'spec': spec,
+                    'type_supports': type_supports,
+                    'pkg_upper': spec.pkg_name.upper(),
+                }
                 data.update(functions)
                 expand_template(
                     template_file, data, generated_file,

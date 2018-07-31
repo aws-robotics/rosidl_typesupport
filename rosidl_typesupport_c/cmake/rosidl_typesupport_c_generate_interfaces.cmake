@@ -97,9 +97,9 @@ if(rosidl_generate_interfaces_LIBRARY_NAME)
 endif()
 if(WIN32)
   target_compile_definitions(${rosidl_generate_interfaces_TARGET}${_target_suffix}
-    PRIVATE "ROSIDL_GENERATOR_C_BUILDING_DLL_${PROJECT_NAME}")
+    PRIVATE "ROSIDL_GENERATOR_C_BUILDING_DLL_${PROJECT_NAME_UPPER}")
   target_compile_definitions(${rosidl_generate_interfaces_TARGET}${_target_suffix}
-    PRIVATE "ROSIDL_TYPESUPPORT_C_BUILDING_DLL_${PROJECT_NAME}")
+    PRIVATE "ROSIDL_TYPESUPPORT_C_BUILDING_DLL_${PROJECT_NAME_UPPER}")
 endif()
 
 set_target_properties(${rosidl_generate_interfaces_TARGET}${_target_suffix}

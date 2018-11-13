@@ -103,12 +103,8 @@ if(rosidl_generate_action_interfaces_LIBRARY_NAME)
   set_target_properties(${rosidl_generate_action_interfaces_TARGET}${_target_suffix}
     PROPERTIES OUTPUT_NAME "${rosidl_generate_action_interfaces_LIBRARY_NAME}${_target_suffix}")
 endif()
-if(WIN32)
-  target_compile_definitions(${rosidl_generate_action_interfaces_TARGET}${_target_suffix}
-    PRIVATE "ROSIDL_GENERATOR_C_BUILDING_DLL_${PROJECT_NAME}")
-  target_compile_definitions(${rosidl_generate_action_interfaces_TARGET}${_target_suffix}
-    PRIVATE "ROSIDL_TYPESUPPORT_C_BUILDING_DLL_${PROJECT_NAME}")
-endif()
+target_compile_definitions(${rosidl_generate_action_interfaces_TARGET}${_target_suffix}
+  PRIVATE "ROSIDL_GENERATOR_C_BUILDING_DLL_${PROJECT_NAME}_ACTION")
 
 set_target_properties(${rosidl_generate_action_interfaces_TARGET}${_target_suffix}
   PROPERTIES CXX_STANDARD 14)
